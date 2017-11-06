@@ -1,0 +1,16 @@
+//CUSTOMER TABLE
+create table cust_info(c_id int(4) PRIMARY KEY,c_fname varchar(20)NOT NULL,c_lname varchar(20) NOT NULL,c_dob date NOT NULL,c_gender char(1)NOT NULL,c_contact double(10,0) Unique NOT NULL,c_BV int(4) DEFAULT 0,c_join_date date NOT NULL);
+
+insert into cust_info values(1001,"John","Martin",'1994/04/02','M',9824756717,500,'2014/03/01');
+insert into cust_info values(1002,"Sarah","Whitman",'1992/02/26','F',9909013713,0,'2014/03/05');
+
+//PRODUCT TABLE
+create table pro_info(p_id int(4) PRIMARY KEY,p_name varchar(20) NOT NULL,p_manufacturer varchar(20) NOT NULL,p_MRP double(4,2) NOT NULL,p_add_date date NOT NULL,p_quantity int(4) NOT NULL,p_BV int(4) NOT NULL);
+
+insert into pro_info values(1001,'Parle-G','Parle',5.00,'2014/02/28',100,1);
+insert into pro_info values(1002,'Marie Gold','Britania',10.00,'2014/02/28',100,2);
+
+//SALES TABLE
+create table sales_info(bill_id int(4) PRIMARY KEY,bill_date date NOT NULL,c_id int(4) NOT NULL,c_name varchar(20) NOT NULL,bill_total int(4) NOT NULL,bill_discount int(4),final_amount int(4) NOT NULL);
+
+insert into sales_info values(1001,'2014/03/05',1001,"John Martin",1000,00,1000);
